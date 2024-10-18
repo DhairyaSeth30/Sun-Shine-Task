@@ -26,8 +26,8 @@ class RoundedButton2 extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8.0),
               border: Border.all(
-                color: border ?? Colors.transparent, // Use default color if border is null
-                width: 1.0, // Border width
+                color: border ?? Colors.transparent,
+                width: 1.0,
               ),
             ),
             child: Material(

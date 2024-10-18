@@ -69,19 +69,18 @@ class _HorizontalListViewState extends State<HorizontalListView> {
                       ),
                       child: Stack(
                         children: [
-                          // Positioned Image with gap from all sides
                           Positioned(
-                            top: 22.0, // Gap from the top
-                            bottom: 22.0, // Gap from the bottom
-                            left: 10.0, // Gap from the left
-                            right: 10.0, // Gap from the right
+                            top: 22.0,
+                            bottom: 22.0,
+                            left: 10.0,
+                            right: 10.0,
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(
-                                  10.0), // Optional: Rounding the corners of the image
+                                  10.0),
                               child: Image.asset(
                                 'assets/images/services_img${index+1}.png',
                                 fit: BoxFit
-                                    .fill, // Image covers the available space inside the container
+                                    .fill,
                               ),
                             ),
                           ),
@@ -90,7 +89,7 @@ class _HorizontalListViewState extends State<HorizontalListView> {
                     ),
                   ),
                   Text(
-                    containerTitles[index], // Display title for each container
+                    containerTitles[index],
                     style: TextStyle(
                       fontSize: 14.sp,
                       fontFamily: 'Rubik',
@@ -107,8 +106,8 @@ class _HorizontalListViewState extends State<HorizontalListView> {
 
         // Dot indicator
         SmoothPageIndicator(
-          controller: _pageController,  // The page controller
-          count: (containerTitles.length / 3).ceil(),  // Total number of containers
+          controller: _pageController,
+          count: (containerTitles.length / 3).ceil(),
           effect: WormEffect(
             dotHeight: 8.0,
             dotWidth: 8.0,
@@ -127,98 +126,5 @@ class _HorizontalListViewState extends State<HorizontalListView> {
   }
 }
 
-//
-// Container(
-// width: 150.0,
-// margin: EdgeInsets.all(8.0),
-// decoration: BoxDecoration(
-// color: Theme.of(context).colorScheme.primary,
-// borderRadius: BorderRadius.circular(8.0),
-// ),
-// child: Center(
-// child: Text(
-// "Hello",
-// style:
-// TextStyle(color: Theme.of(context).colorScheme.onPrimary),
-// ),
-// ),
-// );
 
 
-
-
-
-// return Column(
-//   children: [
-//     // Horizontal ListView for square containers
-//     Padding(
-//       padding: const EdgeInsets.all(8.0),
-//       child: SizedBox(
-//         height: 140.0,  // Set the height for square containers
-//         // width: 110.0,
-//         child: PageView.builder(
-//           controller: _pageController,
-//           itemCount: 3,  // Only 9 containers
-//           itemBuilder: (context, index) {
-//             return Padding(
-//               padding: const EdgeInsets.symmetric(horizontal: 8.0),
-//               child: Column(
-//                 children: [
-//                   Container(
-//                     height: 110,
-//                     width: 110,
-//                     decoration: BoxDecoration(
-//                       color : containerColors[index],
-//                       borderRadius: BorderRadius.circular(12.0),
-//                     ),
-//                     child: Stack(
-//                       children: [
-//                         // Positioned Image with gap from all sides
-//                         Positioned(
-//                           top: 22.0,     // Gap from the top
-//                           bottom: 22.0,  // Gap from the bottom
-//                           left: 10.0,    // Gap from the left
-//                           right: 10.0,   // Gap from the right
-//                           child: ClipRRect(
-//                             borderRadius: BorderRadius.circular(10.0),  // Optional: Rounding the corners of the image
-//                             child: Image.asset(
-//                               'assets/images/services_img${index+1}.png',
-//                               fit: BoxFit.fill,  // Image covers the available space inside the container
-//                             ),
-//                           ),
-//                         ),
-//                       ],
-//                     ),
-//                   ),
-//                   SizedBox(height: 5.0),
-//                   Text(
-//                     containerTitles[index],  // Display title for each container
-//                     style: TextStyle(
-//                       fontSize: 14.0,
-//                       fontWeight: FontWeight.bold,
-//                       color: Colors.deepPurple,
-//                     ),
-//                   ),
-//                 ],
-//               ),
-//             );
-//           },
-//         ),
-//       ),
-//     ),
-//
-//     SizedBox(height: 1.0),  // Space between list and dot indicator
-//
-//     // Dot indicator
-//     SmoothPageIndicator(
-//       controller: _pageController,  // The page controller
-//       count: 3,  // Total number of containers
-//       effect: WormEffect(
-//         dotHeight: 8.0,
-//         dotWidth: 8.0,
-//         activeDotColor: Colors.blue,  // Active dot color
-//         dotColor: Colors.grey,  // Inactive dot color
-//       ),
-//     ),
-//   ],
-// );

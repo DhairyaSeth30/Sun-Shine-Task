@@ -24,87 +24,139 @@ class _RateListState extends ConsumerState<RateList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-          children: [
-            Positioned.fill(
-              child: SvgPicture.asset(
-                'assets/images/bg.svg',
-                fit: BoxFit.fill,
-              ),
-            ),
-
-            // Overlay Row with text and icons
-            Positioned(
-      top: 30.0, // Adjust positioning
-      left: 20.0,
-      right: 20.0,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: Column(
         children: [
-          // Column with icon and texts
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SvgPicture.asset(
-                'assets/images/brand_icon.svg',
-                fit: BoxFit.cover,
-              ), // Your icon
-              SizedBox(height: 8.0),
-              Text(
-                "Hello Anmol",
-                style: TextStyle(
-                  fontSize: 20.sp,
-                  fontFamily: 'Rubik',
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white, // Adjust text color
+
+          Expanded(
+            child: Stack(
+              children: [
+                Positioned.fill(
+                  child: SvgPicture.asset(
+                    'assets/images/bg.svg',
+                    fit: BoxFit.fill,
+                  ),
                 ),
-              ),
-              Text(
-                "Welcome Back",
-                style: TextStyle(
-                  fontSize: 14.sp,
-                  fontFamily: 'Rubik',
-                  fontWeight: FontWeight.w400,
-                  color: Colors.white, // Adjust text color
+            
+                // Overlay Row with text and icons
+                Positioned(
+                  top: 30.0, // Adjust positioning
+                  left: 20.0,
+                  right: 20.0,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // Column with icon and texts
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SvgPicture.asset(
+                            'assets/images/brand_icon.svg',
+                            fit: BoxFit.cover,
+                          ), // Your icon
+                          SizedBox(height: 8.0),
+                          Text(
+                            "Hello Anmol",
+                            style: TextStyle(
+                              fontSize: 20.sp,
+                              fontFamily: 'Rubik',
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white, // Adjust text color
+                            ),
+                          ),
+                          Text(
+                            "Welcome Back",
+                            style: TextStyle(
+                              fontSize: 14.sp,
+                              fontFamily: 'Rubik',
+                              fontWeight: FontWeight.w400,
+                              color: Colors.white, // Adjust text color
+                            ),
+                          ),
+                        ],
+                      ),
+
+                      // Profile and notification icons
+                      Row(
+                        children: [
+                          IconButton(
+                            icon: Image.asset(
+                              'assets/images/profile_img.png',
+                              // height: 50,
+                            ),
+                            onPressed: () {
+                              // Add your action here
+                            },
+                          ),
+                          IconButton(
+                            icon: SvgPicture.asset(
+                              'assets/icons/notification.svg',
+                            ),
+                            onPressed: () {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text('Notification button pressed!'),
+                                  duration: Duration(seconds: 2),
+                                ),
+                              );
+                            },
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+                Positioned(
+                  top: 266,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20,),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Service',
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            fontFamily: 'Rubik',
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromRGBO(59, 49, 158, 1),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text('See All tapped!'),
+                                duration: Duration(seconds: 2),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'See All',
+                            style: TextStyle(
+                              fontSize: 16.0,
+                              fontFamily: 'Rubik',
+                              fontWeight: FontWeight.w500,
+                              color: Color.fromRGBO(35, 81, 219, 1),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ]
+            ),
           ),
 
-          // Profile and notification icons
-          Row(
-            children: [
-              IconButton(
-                icon: Image.asset(
-                  'assets/images/profile_img.png',
-                  // height: 50,
-                ),
-                onPressed: () {
-                  // Add your action here
-                },
-              ),
-              IconButton(
-                icon: SvgPicture.asset(
-                  'assets/icons/notification.svg',
-                ),
-                onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text('Notification button pressed!'),
-                      duration: Duration(seconds: 2),
-                    ),
-                  );
-                },
-              ),
-            ],
-          ),
+
+          // SizedBox(height: 500,),
+
+
+
         ],
       ),
-    ),
-          ]
-      )
     );
-  }
+    }
 }
 
 // Stack(

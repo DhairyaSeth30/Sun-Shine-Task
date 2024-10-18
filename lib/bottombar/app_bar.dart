@@ -68,56 +68,60 @@ class _CustomAppBarState extends ConsumerState<CustomAppBar>
 
   @override
   Widget build(BuildContext context) {
+    // return AppBar(
+    //   backgroundColor: Colors.transparent, // Make AppBar background transparent
+    //   elevation: 0, // Remove the shadow
+    //   systemOverlayStyle: SystemUiOverlayStyle(
+    //     statusBarColor: Colors.transparent, // Make status bar transparent
+    //     statusBarIconBrightness: Brightness.light, // Use dark icons on status bar (for light backgrounds)
+    //   ),
+    //   leading: Icon(
+    //     Icons.dashboard_outlined,
+    //     color: Colors.white,
+    //   ),
+    //   centerTitle: true,
+    //   title: Text(
+    //     widget.title,
+    //     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+    //       color: Colors.white,
+    //       fontSize: 16.h,
+    //     ),
+    //   ),
+    //   actions: [
+    //     // Notification icon with badge
+    //     Badge(
+    //       backgroundColor: Theme.of(context).colorScheme.error,
+    //       label: Text(
+    //         '3',
+    //         style: TextStyle(color: Theme.of(context).colorScheme.onError),
+    //       ),
+    //       alignment: Alignment.topRight,
+    //       offset: Offset(-6.h, 6.h),
+    //       child: IconButton(
+    //         icon: Icon(
+    //           Icons.notifications,
+    //           color: Colors.white,
+    //         ),
+    //         onPressed: () {
+    //           context.push('/${Routes.notification}');
+    //         },
+    //         tooltip: 'Notifications',
+    //       ),
+    //     ),
+    //     IconButton(
+    //       icon: Icon(
+    //         Icons.more_vert,
+    //         color: Colors.white,
+    //       ),
+    //       onPressed: () => _showPopupMenu(context),
+    //       tooltip: 'More Options',
+    //     ),
+    //   ],
+    //   iconTheme: IconThemeData(color: Theme.of(context).colorScheme.onSurface),
+    // );
+
     return AppBar(
-      backgroundColor: Colors.transparent, // Make AppBar background transparent
-      elevation: 0, // Remove the shadow
-      systemOverlayStyle: SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent, // Make status bar transparent
-        statusBarIconBrightness: Brightness.light, // Use dark icons on status bar (for light backgrounds)
-      ),
-      leading: Icon(
-        Icons.dashboard_outlined,
-        color: Colors.white,
-      ),
-      centerTitle: true,
-      title: Text(
-        widget.title,
-        style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-          color: Colors.white,
-          fontSize: 16.h,
-        ),
-      ),
-      actions: [
-        // Notification icon with badge
-        Badge(
-          backgroundColor: Theme.of(context).colorScheme.error,
-          label: Text(
-            '3',
-            style: TextStyle(color: Theme.of(context).colorScheme.onError),
-          ),
-          alignment: Alignment.topRight,
-          offset: Offset(-6.h, 6.h),
-          child: IconButton(
-            icon: Icon(
-              Icons.notifications,
-              color: Colors.white,
-            ),
-            onPressed: () {
-              context.push('/${Routes.notification}');
-            },
-            tooltip: 'Notifications',
-          ),
-        ),
-        IconButton(
-          icon: Icon(
-            Icons.more_vert,
-            color: Colors.white,
-          ),
-          onPressed: () => _showPopupMenu(context),
-          tooltip: 'More Options',
-        ),
-      ],
-      iconTheme: IconThemeData(color: Theme.of(context).colorScheme.onSurface),
     );
+
   }
 }

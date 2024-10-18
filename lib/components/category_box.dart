@@ -34,17 +34,17 @@ class CategoryBox extends StatelessWidget {
               children: [
                 // Positioned Image with gap from all sides
                 Positioned(
-                  top: 10.0, // Gap from the top
-                  bottom: 10.0, // Gap from the bottom
-                  left: 22.0, // Gap from the left
-                  right: 22.0, // Gap from the right
+                  top: 10.0,
+                  bottom: 10.0,
+                  left: 22.0,
+                  right: 22.0,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(
-                        10.0), // Optional: Rounding the corners of the image
+                        10.0),
                     child: Image.asset(
                       img,
                       fit: BoxFit
-                          .cover, // Image covers the available space inside the container
+                          .cover,
                     ),
                   ),
                 ),

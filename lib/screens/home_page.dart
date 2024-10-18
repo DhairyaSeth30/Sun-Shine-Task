@@ -36,7 +36,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                 // SVG image at the top
                 SvgPicture.asset(
                   'assets/images/background_img.svg',
-                  height: 220.0, // Adjust height
+                  height: 220.0,
                   width: double.infinity,
                   fit: BoxFit.cover,
                 ),
@@ -56,7 +56,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                           SvgPicture.asset(
                             'assets/images/brand_icon.svg',
                             fit: BoxFit.cover,
-                          ), // Your icon
+                          ),
                           SizedBox(height: 8.0),
                           Text(
                             "Hello Anmol",
@@ -64,7 +64,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                               fontSize: 20.sp,
                               fontFamily: 'Rubik',
                               fontWeight: FontWeight.w600,
-                              color: Colors.white, // Adjust text color
+                              color: Colors.white,
                             ),
                           ),
                           Text(
@@ -73,7 +73,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                               fontSize: 14.sp,
                               fontFamily: 'Rubik',
                               fontWeight: FontWeight.w400,
-                              color: Colors.white, // Adjust text color
+                              color: Colors.white,
                             ),
                           ),
                         ],

@@ -17,7 +17,6 @@ class ConfirmProduct extends StatelessWidget {
         children: [
           Stack(
             children: [
-              // SVG image at the top
               SvgPicture.asset(
                 'assets/images/background_img.svg',
                 height: 190.h,
@@ -26,13 +25,12 @@ class ConfirmProduct extends StatelessWidget {
               ),
               // Overlay Row with text and icons
               Positioned(
-                top: 50.0, // Adjust positioning
+                top: 50.0,
                 left: 20.0,
                 right: 20.0,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // Column with icon and texts
                     Row(
                       // crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -51,7 +49,7 @@ class ConfirmProduct extends StatelessWidget {
                             fontSize: 22.0,
                             fontFamily: 'Rubik',
                             fontWeight: FontWeight.w500,
-                            color: Colors.white, // Adjust text color
+                            color: Colors.white,
                           ),
                         ),
                       ],
@@ -144,7 +142,7 @@ class ConfirmProduct extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: RoundedButton(
                 title: 'Continue Order',
                 onPressed: (){
@@ -153,6 +151,7 @@ class ConfirmProduct extends StatelessWidget {
                 textColor: Colors.white
             ),
           ),
+          SizedBox(height: 10.0),
           Container(
             width: double.infinity,
             decoration: BoxDecoration(
@@ -172,7 +171,7 @@ class ConfirmProduct extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 18.0, left: 18.0, right: 18.0),
                   child: Column(
-                    mainAxisSize: MainAxisSize.min, // Ensures the container only takes the space it needs
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -243,7 +242,7 @@ class ConfirmProduct extends StatelessWidget {
   // Method to build a custom ListTile
   Widget _buildCustomListTile({required String imgUrl, required String title, required String subtitle, required String bottomText}) {
     return Card(
-      elevation: 5.0, // Add elevation to ListTile
+      elevation: 5.0,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -287,7 +286,6 @@ class ConfirmProduct extends StatelessWidget {
                       color: Color.fromRGBO(59, 49, 158, 1)
                   ),
                 ),
-                // Text()
               ],
             ),
             trailing: Row(
@@ -333,81 +331,3 @@ class ConfirmProduct extends StatelessWidget {
 
 
 
-
-
-// persistentFooterButtons: [
-// Column(
-// children: [
-// RoundedButton(
-// title: 'Continue Order',
-// onPressed: (){
-// // context.push('/${Routes.selectionScreen}');
-// },
-// textColor: Colors.white
-// ),
-// Container(
-// width: double.infinity,
-// decoration: BoxDecoration(
-// gradient: LinearGradient(
-// colors: [Color.fromRGBO(101, 24, 152, 1), Color.fromRGBO(44, 13, 143, 1)],
-// begin: Alignment.topLeft,
-// end: Alignment.bottomRight,
-// ),
-// borderRadius: BorderRadius.only(
-// topLeft: Radius.circular(30.0),
-// topRight: Radius.circular(30.0),
-// ),
-// ),
-// // padding: const EdgeInsets.all(16.0),
-// child: Column(
-// children: [
-// Padding(
-// padding: const EdgeInsets.only(top: 18.0, left: 18.0, right: 18.0),
-// child: Column(
-// mainAxisSize: MainAxisSize.min, // Ensures the container only takes the space it needs
-// children: [
-// Row(
-// mainAxisAlignment: MainAxisAlignment.spaceBetween,
-// children: [
-// Text(
-// "Total Price(4 Items)",
-// style: TextStyle(
-// fontSize: 18,
-// fontWeight: FontWeight.bold,
-// color: Colors.white
-// ),
-// ),
-// Text(
-// "₹400",
-// style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
-// ),
-// ],
-// ),
-// SizedBox(height: 8.0),
-// Row(
-// mainAxisAlignment: MainAxisAlignment.spaceBetween,
-// children: [
-// Text(
-// "Subtotal",
-// style: TextStyle(fontSize: 16, color: Colors.white),
-// ),
-// Text(
-// "₹400",
-// style: TextStyle(fontSize: 16, color: Colors.white),
-// ),
-// ],
-// ),
-// ],
-// ),
-// ),
-// SizedBox(height: 4),
-// Divider(height: 4,),
-// Divider(height: 4,),
-// SizedBox(height: 8, width: double.infinity,)
-// ],
-// ),
-// ),
-// ],
-// ),
-//
-// ],

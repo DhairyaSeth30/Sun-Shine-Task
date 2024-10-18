@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import '../app_router/route_constants.dart';
-import '../components/rounded_button.dart';
 import '../components/rounded_button2.dart';
 import '../components/text_style.dart';
 import '../input_form_field.dart';
@@ -16,20 +15,13 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  final _formKey = GlobalKey<FormState>(); // Declare _formKey here
+  final _formKey = GlobalKey<FormState>();
 
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   String? _deviceId;
   bool passwordShow = true;
-
-  // Future<void> getDeviceId() async {
-  //   String? deviceId = await FirebaseServ.getFCMToken();
-  //   setState(() {
-  //     _deviceId = deviceId;
-  //   });
-  // }
 
 
   @override
@@ -44,8 +36,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // final connectivity = ref.watch(connectivityStatusProviders);
-    // print(connectivity.connectivityStatus);
 
     return Scaffold(
         backgroundColor: Colors.white,
@@ -54,7 +44,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             padding: const EdgeInsets.all(20.0),
             width: MediaQuery.of(context).size.width,
             child: Form(
-              key: _formKey, // Assign the key to the Form widget
+              key: _formKey,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.end,

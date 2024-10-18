@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../app_router/route_constants.dart';
+import '../app_router/route_constants.dart';
 
 class DiscountScreen extends StatefulWidget {
   @override
@@ -29,7 +29,7 @@ class _DiscountScreenState extends State<DiscountScreen> {
               ),
               // Overlay Row with text and icons
               Positioned(
-                top: 50.0, // Adjust positioning
+                top: 50.0,
                 left: 20.0,
                 right: 20.0,
                 child: Row(
@@ -54,7 +54,7 @@ class _DiscountScreenState extends State<DiscountScreen> {
                             fontSize: 22.sp,
                             fontFamily: 'Rubik',
                             fontWeight: FontWeight.w500,
-                            color: Colors.white, // Adjust text color
+                            color: Colors.white,
                           ),
                         ),
                       ],
@@ -95,7 +95,6 @@ class _DiscountScreenState extends State<DiscountScreen> {
                       height: 12,
                     ),
                     discountCard(2),
-                    // Spacer(),
                   ],
                 ),
               ),
@@ -154,7 +153,6 @@ class _DiscountScreenState extends State<DiscountScreen> {
         padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 3.h),
         child: Row(
           children: [
-            // Radio button
             Transform.scale(
               scale: 1.3, // Increase the size by adjusting the scale
               child: Radio(
@@ -166,7 +164,7 @@ class _DiscountScreenState extends State<DiscountScreen> {
                   });
                 },
                 activeColor:
-                    Colors.white, // Make the radio button white when selected
+                    Colors.white,
                 fillColor: MaterialStateProperty.all(
                     Colors.white), // Unselected state color
               ),
@@ -195,7 +193,6 @@ class _DiscountScreenState extends State<DiscountScreen> {
                         color: Colors.white),
                   ),
                   SizedBox(height: 8.0),
-                  // Special 50% Button
                   ElevatedButton(
                     onPressed: () {
 
@@ -212,7 +209,7 @@ class _DiscountScreenState extends State<DiscountScreen> {
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w400,
                         fontFamily: 'Rubik',
-                        color: Colors.black, // Black text color
+                        color: Colors.black,
                       ),
                     ),
                   ),

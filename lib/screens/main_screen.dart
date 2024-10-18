@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sunshine_task/bottombar/bottom_bar_state.dart';
 import '../../app_router/route_constants.dart';
+import '../bottombar/app_bar.dart';
 import '../bottombar/bottom_nav_items.dart';
 
 
@@ -34,7 +35,7 @@ class _MainPageState extends ConsumerState<MainPage> {
             height: kBottomNavigationBarHeight,
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [Color.fromRGBO(101, 24, 152, 1), Color.fromRGBO(44, 13, 143, 1)], // Your gradient colors
+                colors: [Color.fromRGBO(101, 24, 152, 1), Color.fromRGBO(44, 13, 143, 1)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -72,13 +73,13 @@ class _MainPageState extends ConsumerState<MainPage> {
     ref.read(bottomNavProvider.notifier).setIndex(index, item.label);
     switch (index) {
       case 0:
-        context.go('/${Routes.menu}');
+        context.go('/${Routes.home}');
         break;
       case 1:
         context.push('/${Routes.rateList}');
         break;
       case 2:
-        context.go('/${Routes.leaveTracker}');
+        context.go('/${Routes.orderDetail}');
         break;
       case 3:
         context.push('/${Routes.profile}');

@@ -8,10 +8,8 @@ class CarouselView extends StatefulWidget {
 }
 
 class _CarouselViewState extends State<CarouselView> {
-  // Controller to keep track of the current page for dot indicators
   final PageController _pageController = PageController();
 
-  // List of image paths for containers
   final List<String> imgList = [
     "assets/images/carousel_img.png",
     "assets/images/carousel_img.png",
@@ -22,24 +20,23 @@ class _CarouselViewState extends State<CarouselView> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // Horizontal ListView for square containers
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: SizedBox(
-            height: 130.0,  // Set the height for square containers
+            height: 130.0,
             child: PageView.builder(
               controller: _pageController,
-              itemCount: imgList.length,  // Use imgList length for dynamic content
+              itemCount: imgList.length,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: Container(
                     height: 120,
                     decoration: BoxDecoration(
-                      color: Colors.purple,  // Fallback background color
+                      color: Colors.purple,
                       borderRadius: BorderRadius.circular(12.0),
                       image: DecorationImage(
-                        image: AssetImage(imgList[index]),  // Path to your images
+                        image: AssetImage(imgList[index]),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -54,12 +51,12 @@ class _CarouselViewState extends State<CarouselView> {
 
         // Dot indicator
         SmoothPageIndicator(
-          controller: _pageController,  // The page controller
-          count: imgList.length,  // Number of images
+          controller: _pageController,
+          count: imgList.length,
           effect: WormEffect(
             dotHeight: 8.0,
             dotWidth: 8.0,
-            activeDotColor: Color.fromRGBO(44, 13, 143, 1),  // Active dot color
+            activeDotColor: Color.fromRGBO(44, 13, 143, 1),
             dotColor: Colors.grey,  // Inactive dot color
           ),
         ),

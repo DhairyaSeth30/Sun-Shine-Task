@@ -162,7 +162,7 @@ class _DateCarouselState extends State<DateCarousel> {
                           setState(() {
                             _selectedMonth = newValue!;
                             _selectedMonthIndex = _months.indexOf(newValue) + 1;
-                            _generateMonthDates(); // Generate dates for the selected month
+                            _generateMonthDates();
                           });
                         },
                         items: _months.map<DropdownMenuItem<String>>((String month) {
@@ -204,7 +204,7 @@ class _DateCarouselState extends State<DateCarousel> {
               );
             },
             options: CarouselOptions(
-              height: 120, // Adjust height for proper visibility
+              height: 100, // Adjust height for proper visibility
               aspectRatio: 2.0, // Set an appropriate aspect ratio
               viewportFraction: 0.2, // Show 5 items in view
               initialPage: 0,
@@ -297,12 +297,17 @@ class _DateCarouselState extends State<DateCarousel> {
                     end: Alignment.bottomRight,
                   ),
                   borderRadius:
-                  BorderRadius.circular(50.0), // Same as Card's shape
+                  BorderRadius.circular(50.0),
                 ),
                 child: Center(
                   child: Text(
                     "Next",
-                    style: TextStyle(fontSize: 21.sp, fontFamily: 'Rubik', fontWeight: FontWeight.w600, color: Colors.white),
+                    style: TextStyle(
+                        fontSize: 21.sp,
+                        fontFamily: 'Rubik',
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white
+                    ),
                   ),
                 ),
               ),

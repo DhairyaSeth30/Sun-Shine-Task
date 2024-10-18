@@ -21,72 +21,73 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
       backgroundColor: Colors.white,
       body: Column(
         children: [
+          Stack(
+            children: [
+              // SVG image at the top
+              SvgPicture.asset(
+                'assets/images/background_img.svg',
+                height: 190.h,
+                width: double.infinity,
+                fit: BoxFit.fill,
+              ),
+              // Overlay Row with text and icons
+              Positioned(
+                top: 50.0,
+                left: 20.0,
+                right: 20.0,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    // Column with icon and texts
+                    Row(
+                      // crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        GestureDetector(
+                          onTap: (){
+                            context.pop(context);
+                          },
+                          child: SvgPicture.asset(
+                            'assets/icons/left_arrow_icon.svg',
+                          ),
+                        ),
+                        SizedBox(width: 12.0),
+                        Text(
+                          "Payment Method",
+                          style: TextStyle(
+                            fontSize: 22.sp,
+                            fontFamily: 'Rubik',
+                            fontWeight: FontWeight.w500,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    // Profile and notification icons
+                    IconButton(
+                      icon: SvgPicture.asset(
+                        'assets/icons/notification.svg',
+                      ),
+                      onPressed: () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('Notification button pressed!'),
+                            duration: Duration(seconds: 2),
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
           Expanded(
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Stack(
-                    children: [
-                      // SVG image at the top
-                      SvgPicture.asset(
-                        'assets/images/background_img.svg',
-                        height: 190.h,
-                        width: double.infinity,
-                        fit: BoxFit.fill,
-                      ),
-                      // Overlay Row with text and icons
-                      Positioned(
-                        top: 50.0, // Adjust positioning
-                        left: 20.0,
-                        right: 20.0,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            // Column with icon and texts
-                            Row(
-                              // crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                GestureDetector(
-                                  onTap: (){
-                                    context.pop(context);
-                                  },
-                                  child: SvgPicture.asset(
-                                    'assets/icons/left_arrow_icon.svg',
-                                  ),
-                                ),
-                                SizedBox(width: 12.0),
-                                Text(
-                                  "Payment Method",
-                                  style: TextStyle(
-                                    fontSize: 22.sp,
-                                    fontFamily: 'Rubik',
-                                    fontWeight: FontWeight.w500,
-                                    color: Colors.white, // Adjust text color
-                                  ),
-                                ),
-                              ],
-                            ),
-            
-                            // Profile and notification icons
-                            IconButton(
-                              icon: SvgPicture.asset(
-                                'assets/icons/notification.svg',
-                              ),
-                              onPressed: () {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(
-                                    content: Text('Notification button pressed!'),
-                                    duration: Duration(seconds: 2),
-                                  ),
-                                );
-                              },
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                  // <<<<<<<<<<<<<<<<<--------------------->>>>>>>>>>>>>>>
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 5.0),
                     child: SvgPicture.asset(
@@ -99,11 +100,11 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                     child: SmoothPageIndicator(
                       controller: _pageController,
                       count: 3, // Total number of containers
-                      effect: WormEffect(
+                      effect: const WormEffect(
                         dotHeight: 8.0,
                         dotWidth: 8.0,
                         activeDotColor:
-                            Color.fromRGBO(44, 13, 143, 1), // Active dot color
+                            Color.fromRGBO(44, 13, 143, 1),
                         dotColor: Colors.grey, // Inactive dot color
                       ),
                     ),
@@ -231,7 +232,7 @@ class _PaymentMethodPageState extends State<PaymentMethodPage> {
                     end: Alignment.bottomRight,
                   ),
                   borderRadius:
-                  BorderRadius.circular(50.0), // Same as Card's shape
+                  BorderRadius.circular(50.0),
                 ),
                 child: Center(
                   child: Text(

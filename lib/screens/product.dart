@@ -29,7 +29,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
   ];
 
   // Gradient color for selected items
-  final selectedGradient = LinearGradient(
+  final selectedGradient = const LinearGradient(
     colors: [
       Color.fromRGBO(101, 24, 152, 0.9),
       Color.fromRGBO(44, 13, 143, 0.9)
@@ -54,13 +54,12 @@ class _SelectionScreenState extends State<SelectionScreen> {
               ),
               // Overlay Row with text and icons
               Positioned(
-                top: 50.0, // Adjust positioning
+                top: 50.0,
                 left: 20.0,
                 right: 20.0,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // Column with icon and texts
                     Row(
                       // crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -72,10 +71,6 @@ class _SelectionScreenState extends State<SelectionScreen> {
                             'assets/icons/left_arrow_icon.svg',
                           ),
                         ),
-                        // Icon(
-                        //   Icons.arrow_back_rounded,
-                        //   color: Colors.white
-                        // ),
                         SizedBox(width: 12.0),
                         Text(
                           "Product",
@@ -83,7 +78,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
                             fontSize: 22.sp,
                             fontWeight: FontWeight.w500,
                             fontFamily: 'Rubik',
-                            color: Colors.white, // Adjust text color
+                            color: Colors.white,
                           ),
                         ),
                       ],
@@ -170,7 +165,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
                               onQuantityChanged: (newQuantity) {
                                 setState(() {
                                   _quantities[0] =
-                                      newQuantity; // Update the quantity for that tile
+                                      newQuantity;
                                 });
                               },
                             ),
@@ -183,7 +178,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
                               onQuantityChanged: (newQuantity) {
                                 setState(() {
                                   _quantities[1] =
-                                      newQuantity; // Update the quantity for that tile
+                                      newQuantity;
                                 });
                               },
                             ),
@@ -196,7 +191,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
                               onQuantityChanged: (newQuantity) {
                                 setState(() {
                                   _quantities[2] =
-                                      newQuantity; // Update the quantity for that tile
+                                      newQuantity;
                                 });
                               },
                             ),
@@ -209,7 +204,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
                               onQuantityChanged: (newQuantity) {
                                 setState(() {
                                   _quantities[3] =
-                                      newQuantity; // Update the quantity for that tile
+                                      newQuantity;
                                 });
                               },
                             ),
@@ -222,7 +217,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
                               onQuantityChanged: (newQuantity) {
                                 setState(() {
                                   _quantities[4] =
-                                      newQuantity; // Update the quantity for that tile
+                                      newQuantity;
                                 });
                               },
                             ),
@@ -235,7 +230,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
                               onQuantityChanged: (newQuantity) {
                                 setState(() {
                                   _quantities[5] =
-                                      newQuantity; // Update the quantity for that tile
+                                      newQuantity;
                                 });
                               },
                             ),
@@ -248,7 +243,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
                               onQuantityChanged: (newQuantity) {
                                 setState(() {
                                   _quantities[6] =
-                                      newQuantity; // Update the quantity for that tile
+                                      newQuantity;
                                 });
                               },
                             ),
@@ -272,10 +267,10 @@ class _SelectionScreenState extends State<SelectionScreen> {
                       onPressed: () {
                         context.push('/${Routes.confirmProduct}');
                       },
-                      textColor: Colors.white)),
-              SizedBox(
-                  height: 16.0), // Space between button and price container
-              // Bottom container with price details (stretched and fully aligned at bottom)
+                      textColor: Colors.white)
+              ),
+              SizedBox(height: 16.0),
+              // Bottom container with price details
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -448,7 +443,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
                     bottom: 5,
                     right: 5,
                     child: Image.asset(
-                      imgUrl, // Replace with your image path
+                      imgUrl,
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -491,7 +486,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
               icon: Image.asset('assets/icons/low_icon.png'),
               onPressed: () {
                 if (quantity > 1) {
-                  onQuantityChanged(quantity - 1); // Decrease quantity
+                  onQuantityChanged(quantity - 1);
                 }
               },
             ),
